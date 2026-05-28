@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- TITLE -->
+  <title>Ecapedeh JOJO</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="./logo/logo.png">
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ICON -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+
+    :root{
+
+      --orange:#ff7a00;
+      --orange2:#ffb347;
+      --yellow:#ffd84d;
+      --cream:#fff4df;
+      --brown:#6b3f1d;
+      --dark:#1b1b1b;
+      --green:#25d366;
+
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+
+      font-family:'Fredoka',sans-serif;
+
+      background:
+      linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.72)),
+      url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1974&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+
+      color:white;
+      overflow-x:hidden;
+
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    .container{
+      width:100%;
+      max-width:1250px;
+      margin:auto;
+      padding:0 22px;
+    }
+
+    /* ======================= */
+    /* HEADER */
+    /* ======================= */
+
+    header{
+
+      position:fixed;
+      top:0;
+      left:0;
+
+      width:100%;
+
+      z-index:9999;
+
+      background:rgba(20,20,20,.78);
+
+      backdrop-filter:blur(15px);
+
+      border-bottom:2px solid rgba(255,255,255,.06);
+
+    }
+
+    .navbar{
+
+      height:84px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+    }
+
+    /* LOGO */
+
+    .logo{
+
+      display:flex;
+      align-items:center;
+      gap:14px;
+
+    }
+
+    .logo img{
+
+      width:58px;
+      height:58px;
+
+      border-radius:18px;
+
+      object-fit:cover;
+
+      background:white;
+
+      padding:5px;
+
+      box-shadow:0 10px 20px rgba(0,0,0,.25);
+
+    }
+
+    .logo-text{
+
+      font-size:1.5rem;
+      font-weight:700;
+
+      color:white;
+
+    }
+
+    .logo-text span{
+      color:var(--yellow);
+    }
+
+    /* MENU */
+
+    .nav-menu{
+
+      display:flex;
+      align-items:center;
+      gap:34px;
+
+      list-style:none;
+
+    }
+
+    .nav-menu a{
+
+      color:white;
+
+      font-size:1rem;
+      font-weight:500;
+
+      transition:.3s;
+
+    }
+
+    .nav-menu a:hover{
+      color:var(--yellow);
+    }
+
+    /* BUTTON */
+
+    .nav-btn{
+
+      padding:14px 22px;
+
+      border-radius:18px;
+
+      background:
+      linear-gradient(135deg,var(--orange),var(--orange2));
+
+      color:white;
+
+      font-weight:600;
+
+      box-shadow:
+      0 12px 24px rgba(255,122,0,.28);
+
+      transition:.3s;
+
+    }
+
+    .nav-btn:hover{
+      transform:translateY(-4px);
+    }
+
+    /* MOBILE */
+
+    .menu-toggle{
+      display:none;
+      font-size:1.8rem;
+      cursor:pointer;
+      color:white;
+    }
+
+    /* ======================= */
+    /* HERO */
+    /* ======================= */
+
+    .hero{
+
+      min-height:100vh;
+
+      display:flex;
+      align-items:center;
+
+      padding:140px 0 90px;
+
+    }
+
+    .hero-wrapper{
+
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+
+      gap:50px;
+
+      align-items:center;
+
+    }
+
+    /* LEFT */
+
+    .hero-badge{
+
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+
+      padding:12px 18px;
+
+      border-radius:999px;
+
+      background:rgba(255,255,255,.1);
+
+      border:2px solid rgba(255,255,255,.08);
+
+      color:var(--yellow);
+
+      margin-bottom:24px;
+
+      font-weight:600;
+
+    }
+
+    .hero-text h1{
+
+      font-size:4.4rem;
+
+      line-height:1.05;
+
+      margin-bottom:22px;
+
+      font-weight:700;
+
+    }
+
+    .hero-text h1 span{
+      color:var(--yellow);
+    }
+
+    .hero-text p{
+
+      font-size:1.05rem;
+
+      line-height:1.9;
+
+      color:#f1f1f1;
+
+      margin-bottom:35px;
+
+      max-width:620px;
+
+    }
+
+    /* BUTTON */
+
+    .hero-buttons{
+
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+
+    }
+
+    .btn{
+
+      padding:17px 28px;
+
+      border-radius:20px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      gap:10px;
+
+      font-weight:600;
+
+      transition:.3s;
+
+    }
+
+    .btn-primary{
+
+      background:
+      linear-gradient(135deg,var(--orange),var(--orange2));
+
+      color:white;
+
+      box-shadow:
+      0 12px 25px rgba(255,122,0,.35);
+
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-4px);
+    }
+
+    .btn-secondary{
+
+      background:rgba(255,255,255,.12);
+
+      border:2px solid rgba(255,255,255,.08);
+
+      color:white;
+
+      backdrop-filter:blur(12px);
+
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,.18);
+    }
+
+    /* RIGHT CARD */
+
+    .hero-card{
+
+      background:
+      linear-gradient(
+      145deg,
+      rgba(255,255,255,.14),
+      rgba(255,255,255,.08));
+
+      backdrop-filter:blur(16px);
+
+      border:2px solid rgba(255,255,255,.08);
+
+      border-radius:36px;
+
+      padding:30px;
+
+      box-shadow:
+      0 18px 40px rgba(0,0,0,.28);
+
+    }
+
+    .hero-logo{
+
+      width:150px;
+
+      margin:0 auto 24px;
+
+      animation:float 3s ease-in-out infinite;
+
+    }
+
+    @keyframes float{
+
+      0%{
+        transform:translateY(0);
+      }
+
+      50%{
+        transform:translateY(-10px);
+      }
+
+      100%{
+        transform:translateY(0);
+      }
+
+    }
+
+    /* PRICE */
+
+    .price-board{
+
+      background:var(--cream);
+
+      border-radius:28px;
+
+      padding:26px;
+
+      color:var(--brown);
+
+      margin-bottom:22px;
+
+      border:4px solid #ffe4b3;
+
+    }
+
+    .price-board h2{
+
+      text-align:center;
+
+      margin-bottom:18px;
+
+      font-size:1.8rem;
+
+      color:#ff6b00;
+
+    }
+
+    .price-item{
+
+      display:flex;
+      justify-content:space-between;
+
+      padding:14px 0;
+
+      border-bottom:2px dashed rgba(0,0,0,.12);
+
+      font-size:1rem;
+
+      font-weight:600;
+
+    }
+
+    .price-item:last-child{
+      border-bottom:none;
+    }
+
+    /* INFO */
+
+    .info-box{
+
+      background:white;
+
+      border-radius:24px;
+
+      padding:24px;
+
+      color:#1f2937;
+
+      margin-bottom:20px;
+
+    }
+
+    .info-box h3{
+
+      margin-bottom:14px;
+
+      color:#ff6b00;
+
+      font-size:1.2rem;
+
+    }
+
+    .info-box ul{
+      padding-left:20px;
+    }
+
+    .info-box li{
+
+      margin-bottom:10px;
+
+      line-height:1.7;
+
+    }
+
+    /* PAYMENT */
+
+    .payment-box{
+
+      background:white;
+
+      border-radius:24px;
+
+      padding:24px;
+
+      text-align:center;
+
+      color:#1f2937;
+
+    }
+
+    .payment-box h2{
+
+      color:#ff6b00;
+
+      margin-bottom:10px;
+
+    }
+
+    .payment-box p{
+
+      color:#6b7280;
+
+      margin-bottom:20px;
+
+    }
+
+    .qris-img{
+
+      width:100%;
+      max-width:260px;
+
+      margin:auto;
+
+      border-radius:20px;
+
+      border:5px solid #ffe6bf;
+
+      transition:.3s;
+
+    }
+
+    .qris-img:hover{
+      transform:scale(1.03);
+    }
+
+    /* BUTTON BUKTI */
+
+    .send-proof-btn{
+
+      margin-top:22px;
+
+      width:100%;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      gap:10px;
+
+      padding:16px 20px;
+
+      border-radius:18px;
+
+      background:
+      linear-gradient(135deg,#25d366,#18b857);
+
+      color:white;
+
+      font-weight:600;
+
+      transition:.3s;
+
+      box-shadow:
+      0 12px 25px rgba(37,211,102,.28);
+
+    }
+
+    .send-proof-btn:hover{
+
+      transform:translateY(-4px);
+
+    }
+
+    /* SERVICES */
+
+    section{
+      padding:90px 0;
+    }
+
+    .section-title{
+
+      text-align:center;
+
+      margin-bottom:60px;
+
+    }
+
+    .section-title h2{
+
+      font-size:3rem;
+
+      margin-bottom:10px;
+
+    }
+
+    .cards{
+
+      display:grid;
+
+      grid-template-columns:
+      repeat(auto-fit,minmax(250px,1fr));
+
+      gap:26px;
+
+    }
+
+    .card{
+
+      background:
+      linear-gradient(
+      145deg,
+      rgba(255,255,255,.14),
+      rgba(255,255,255,.08));
+
+      backdrop-filter:blur(16px);
+
+      border:2px solid rgba(255,255,255,.08);
+
+      border-radius:30px;
+
+      padding:35px 28px;
+
+      transition:.35s;
+
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card i{
+
+      width:75px;
+      height:75px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      border-radius:22px;
+
+      background:
+      linear-gradient(135deg,var(--orange),var(--orange2));
+
+      font-size:1.8rem;
+
+      margin-bottom:22px;
+
+      box-shadow:
+      0 12px 20px rgba(255,122,0,.3);
+
+    }
+
+    .card h3{
+
+      font-size:1.4rem;
+
+      margin-bottom:12px;
+
+    }
+
+    .card p{
+
+      line-height:1.8;
+
+      color:#f1f1f1;
+
+    }
+
+    /* FOOTER */
+
+    footer{
+
+      background:rgba(0,0,0,.4);
+
+      padding:34px 20px;
+
+      text-align:center;
+
+      color:white;
+
+      font-size:.95rem;
+
+    }
+
+    /* WA */
+
+    .wa{
+
+      position:fixed;
+
+      right:22px;
+      bottom:22px;
+
+      width:68px;
+      height:68px;
+
+      border-radius:50%;
+
+      background:
+      linear-gradient(135deg,#25d366,#18b857);
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      color:white;
+
+      font-size:1.8rem;
+
+      z-index:999;
+
+      box-shadow:
+      0 12px 25px rgba(37,211,102,.35);
+
+      transition:.3s;
+
+    }
+
+    .wa:hover{
+      transform:scale(1.1);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:992px){
+
+      .hero-wrapper{
+        grid-template-columns:1fr;
+      }
+
+      .hero-text{
+        text-align:center;
+      }
+
+      .hero-text p{
+        margin:auto auto 35px;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .hero-text h1{
+        font-size:3.5rem;
+      }
+
+    }
+
+    @media(max-width:850px){
+
+      .menu-toggle{
+        display:block;
+      }
+
+      .nav-menu{
+
+        position:absolute;
+
+        top:84px;
+        left:0;
+
+        width:100%;
+
+        background:rgba(20,20,20,.98);
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:24px;
+
+        padding:28px 24px;
+
+        display:none;
+
+      }
+
+      .nav-menu.active{
+        display:flex;
+      }
+
+      .nav-btn{
+        display:none;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      .hero{
+        padding-top:130px;
+      }
+
+      .hero-text h1{
+        font-size:2.7rem;
+      }
+
+      .section-title h2{
+        font-size:2.2rem;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+      .hero-card{
+        padding:22px;
+      }
+
+    }
+
+    @media(max-width:480px){
+
+      .hero-text h1{
+        font-size:2.1rem;
+      }
+
+      .wa{
+        width:58px;
+        height:58px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="container navbar">
+
+      <!-- LOGO -->
+
+      <div class="logo">
+
+        <img src="./logo/logo.png" alt="Logo">
+
+        <div class="logo-text">
+          Ecapedeh <span>JOJO</span>
+        </div>
+
+      </div>
+
+      <!-- MENU -->
+
+      <ul class="nav-menu" id="navMenu">
+
+        <li><a href="#">Home</a></li>
+
+        <li><a href="#layanan">Layanan</a></li>
+
+        <li><a href="#payment">QRIS</a></li>
+
+      </ul>
+
+      <!-- BUTTON -->
+
+      <a
+      href="https://wa.me/62882019573398?text=Hallo%20Ecapedeh%20JOJO,%20saya%20ingin%20menggunakan%20layanan%20jasa%20joki%20anda"
+      target="_blank"
+      class="nav-btn">
+
+        HUBUNGI KAMI
+
+      </a>
+
+      <!-- MOBILE -->
+
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container hero-wrapper">
+
+      <!-- LEFT -->
+
+      <div class="hero-text">
+
+        <div class="hero-badge">
+            Fast • Safe • Trusted
+        </div>
+
+        <h1>
+          Jasa Joki Game
+          <span>Pizza Style</span>
+          Profesional
+        </h1>
+
+        <p>
+          Ecapedeh JOJO menyediakan layanan joki game cepat,
+          aman, profesional, dan terpercaya dengan tampilan
+          ala game pizza modern serta pembayaran mudah menggunakan QRIS.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+          href="https://wa.me/62882019573398?text=Hallo%20Ecapedeh%20JOJO,%20saya%20ingin%20menggunakan%20layanan%20jasa%20joki%20anda"
+          target="_blank"
+          class="btn btn-primary">
+
+            <i class="fa-brands fa-whatsapp"></i>
+            Order Sekarang
+
+          </a>
+
+          <a
+          href="#payment"
+          class="btn btn-secondary">
+
+            <i class="fa-solid fa-qrcode"></i>
+            Scan QRIS
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+
+      <div class="hero-card">
+
+        <img src="./logo/logo.png" alt="Logo" class="hero-logo">
+
+        <!-- PRICE -->
+
+        <div class="price-board">
+
+          <h2>LIST HARGA</h2>
+
+          <div class="price-item">
+            <span>5K</span>
+            <span>10RB</span>
+          </div>
+
+          <div class="price-item">
+            <span>10K</span>
+            <span>20RB</span>
+          </div>
+
+          <div class="price-item">
+            <span>20K</span>
+            <span>40RB</span>
+          </div>
+
+          <div class="price-item">
+            <span>30K</span>
+            <span>60RB</span>
+          </div>
+
+          <div class="price-item">
+            <span>100DM</span>
+            <span>25RB</span>
+          </div>
+
+          <div class="price-item">
+            <span>220DM</span>
+            <span>50RB</span>
+          </div>
+
+          <div class="price-item">
+            <span>350DM</span>
+            <span>75RB</span>
+          </div>
+
+          <div class="price-item">
+            <span>510DM</span>
+            <span>100RB</span>
+          </div>
+
+        </div>
+
+        <!-- INFO -->
+
+        <div class="info-box">
+
+          <h3>Syarat & Ketentuan</h3>
+
+          <ul>
+            <li>Semua topping wajib full hijau</li>
+            <li>Semua topping otomatis lengkap</li>
+            <li>Proses dimulai setelah pembayaran</li>
+          </ul>
+
+        </div>
+
+        <!-- PAYMENT -->
+
+        <div class="payment-box" id="payment">
+
+          <h2>💳 Pembayaran QRIS</h2>
+
+          <p>
+            Scan QRIS berikut untuk melakukan pembayaran
+          </p>
+
+          <img src="./logo/qr.jpeg" alt="QRIS" class="qris-img">
+
+          <!-- BUTTON KIRIM BUKTI -->
+
+          <a
+          href="https://wa.me/62882019573398?text=Hallo%20Ecapedeh%20JOJO,%20saya%20sudah%20melakukan%20pembayaran%20QRIS%20dan%20ingin%20mengirimkan%20bukti%20transfer."
+          target="_blank"
+          class="send-proof-btn">
+
+            <i class="fa-brands fa-whatsapp"></i>
+            Kirim Bukti Pembayaran
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section id="layanan">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Layanan Kami</h2>
+
+        <p>
+          Fast • Safe • Professional • Trusted
+        </p>
+
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+
+          <i class="fa-solid fa-pizza-slice"></i>
+
+          <h3>Joki Level</h3>
+
+          <p>
+            Naik level lebih cepat dan efisien tanpa membuang waktu.
+          </p>
+
+        </div>
+
+        <div class="card">
+
+          <i class="fa-solid fa-trophy"></i>
+
+          <h3>Push Rank</h3>
+
+          <p>
+            Push rank aman dan dimainkan oleh player profesional.
+          </p>
+
+        </div>
+
+        <div class="card">
+
+          <i class="fa-solid fa-coins"></i>
+
+          <h3>Farm Coin</h3>
+
+          <p>
+            Farming coin lebih cepat dengan metode yang aman.
+          </p>
+
+        </div>
+
+        <div class="card">
+
+          <i class="fa-solid fa-fire"></i>
+
+          <h3>Event Joki</h3>
+
+          <p>
+            Selesaikan berbagai event game dengan cepat dan rapi.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    Copyright © 2026 Ecapedeh JOJO • Fast • Safe • Trusted
+  </footer>
+
+  <!-- FLOAT WA -->
+
+  <a
+  href="https://wa.me/62882019573398?text=Hallo%20Ecapedeh%20JOJO,%20saya%20ingin%20menggunakan%20layanan%20jasa%20joki%20anda"
+  target="_blank"
+  class="wa">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+  </a>
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.onclick = () => {
+      navMenu.classList.toggle('active');
+    }
+
+  </script>
+
+</body>
+</html>
